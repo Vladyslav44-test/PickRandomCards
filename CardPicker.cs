@@ -8,8 +8,17 @@ namespace PickRandomCards
 {
     internal class CardPicker
     {
+        /// <summary>
+        /// Об'єкт класу Random, використовуваний в методах
+        /// RandomValue і RandomSuit для генерації випадкових чисел.
+        /// </summary>
         static Random random = new Random();
 
+        /// <summary>
+        /// Обирає декілька випадкових карт та повертає їх.
+        /// </summary>
+        /// <param name="numberOfCards">Кількість карт, які потрібно вибрати.</param>
+        /// <returns>Масив стрічок з назвами карт.</returns>
         public static string[] PickSomeCards(int numberOfCards)
         {
             string[] pickedCards = new string[numberOfCards];
@@ -20,6 +29,10 @@ namespace PickRandomCards
             return pickedCards;
         }
 
+        /// <summary>
+        /// Генерує випадковий номінал для карти.
+        /// </summary>
+        /// <returns>Стрічка з номіналом карти.</returns>
         private static string RandomValue()
         {
             int value = random.Next(1, 14);
@@ -30,6 +43,10 @@ namespace PickRandomCards
             return value.ToString();
         }
 
+        /// <summary>
+        /// Генерує випадкову масть для карти.
+        /// </summary>
+        /// <returns>Стрічка з мастю карти.</returns>
         private static string RandomSuit()
         {
             int value = random.Next(1, 5);
